@@ -1,0 +1,92 @@
+---
+title: "CodeBook"
+author: "Anisha"
+date: "28/02/2021"
+output: html_document
+---
+
+The tidy data set "tidydata.txt" consists of 68 columns and 180 rows, along with a header row.
+The first column is the Subject number; the second column is the activity the subject carried out, and the other 66 columns are the averages of certain values that were calculated from accelerometer and gyrometer signals during the original experiment.
+There are 30 subjects, each carrying out 6 activities. For each Subject-Activity combination, the average value of the following features is present:
+
+Time.BodyAccelerometer.Mean.X
+Time.BodyAccelerometer.Mean.Y
+Time.BodyAccelerometer.Mean.Z
+Time.BodyAccelerometer.Std.Dev.X
+Time.BodyAccelerometer.Std.Dev.Y
+Time.BodyAccelerometer.Std.Dev.Z
+Time.GravityAccelerometer.Mean.X
+Time.GravityAccelerometer.Mean.Y
+Time.GravityAccelerometer.Mean.Z
+Time.GravityAccelerometer.Std.Dev.X
+Time.GravityAccelerometer.Std.Dev.Y
+Time.GravityAccelerometer.Std.Dev.Z
+Time.BodyAccelerometer.JerkMean.X
+Time.BodyAccelerometer.JerkMean.Y
+Time.BodyAccelerometer.JerkMean.Z
+Time.BodyAccelerometer.JerkStd.Dev.X
+Time.BodyAccelerometer.JerkStd.Dev.Y
+Time.BodyAccelerometer.JerkStd.Dev.Z
+Time.BodyGyrometer.Mean.X
+Time.BodyGyrometer.Mean.Y
+Time.BodyGyrometer.Mean.Z
+Time.BodyGyrometer.Std.Dev.X
+Time.BodyGyrometer.Std.Dev.Y
+Time.BodyGyrometer.Std.Dev.Z
+Time.BodyGyrometer.JerkMean.X
+Time.BodyGyrometer.JerkMean.Y
+Time.BodyGyrometer.JerkMean.Z
+Time.BodyGyrometer.JerkStd.Dev.X
+Time.BodyGyrometer.JerkStd.Dev.Y
+Time.BodyGyrometer.JerkStd.Dev.Z
+Time.BodyAccelerometer.Magnitude.Mean.
+Time.BodyAccelerometer.Magnitude.Std.Dev.
+Time.GravityAccelerometer.Magnitude.Mean.
+Time.GravityAccelerometer.Magnitude.Std.Dev.
+Time.BodyAccelerometer.JerkMagnitude.Mean.
+Time.BodyAccelerometer.JerkMagnitude.Std.Dev.
+Time.BodyGyrometer.Magnitude.Mean.
+Time.BodyGyrometer.Magnitude.Std.Dev.
+Time.BodyGyrometer.JerkMagnitude.Mean.
+Time.BodyGyrometer.JerkMagnitude.Std.Dev.
+Frequency.BodyAccelerometer.Mean.X
+Frequency.BodyAccelerometer.Mean.Y
+Frequency.BodyAccelerometer.Mean.Z
+Frequency.BodyAccelerometer.Std.Dev.X
+Frequency.BodyAccelerometer.Std.Dev.Y
+Frequency.BodyAccelerometer.Std.Dev.Z
+Frequency.BodyAccelerometer.JerkMean.X
+Frequency.BodyAccelerometer.JerkMean.Y
+Frequency.BodyAccelerometer.JerkMean.Z
+Frequency.BodyAccelerometer.JerkStd.Dev.X
+Frequency.BodyAccelerometer.JerkStd.Dev.Y
+Frequency.BodyAccelerometer.JerkStd.Dev.Z
+Frequency.BodyGyrometer.Mean.X
+Frequency.BodyGyrometer.Mean.Y
+Frequency.BodyGyrometer.Mean.Z
+Frequency.BodyGyrometer.Std.Dev.X
+Frequency.BodyGyrometer.Std.Dev.Y
+Frequency.BodyGyrometer.Std.Dev.Z
+Frequency.BodyAccelerometer.Magnitude.Mean.
+Frequency.BodyAccelerometer.Magnitude.Std.Dev.
+Frequency.BodyAccelerometer.JerkMagnitude.Mean.
+Frequency.BodyAccelerometer.JerkMagnitude.Std.Dev.
+Frequency.BodyGyrometer.Magnitude.Mean.
+Frequency.BodyGyrometer.Magnitude.Std.Dev.
+Frequency.BodyGyrometer.JerkMagnitude.Mean.
+Frequency.BodyGyrometer.JerkMagnitude.Std.Dev.
+
+
+These features were chosen out of the 561 available features in the original dataset as they give the mean and standard deviations of the signals [as was required in the assignment]. The variable names were made more descriptive by indicating Time for t, Frequency for f, and so on.
+
+To read the data into R, use any one of the following commands:
+
+dat = read.table("tidydata.txt", sep = ",", header = TRUE)
+dat = read.csv("tidydata.txt")
+
+Once you read in the dataframe, you will see that this is the wide form as mentioned in the rubric, as either long or wide form is acceptable. It follows the principles of tidy data because it contains one observation per row and each value under a separate column -- the averages of certain signals recorded for a certain activity done by a certain subject. All the 66 averages in each row belong to a specific subject doing a specific activity so I consider it as one observation.
+I also consider the different columns for X, Y, Z axes (e.g. Time.BodyAccelerometer.Mean.X, Time.BodyAccelerometer.Mean.Y, Time.BodyAccelerometer.Mean.Z) to be discrete values because theoretically the axes are independent of each other (mentioned as acceptable in the rubric).
+
+References:
+
+<https://thoughtfulbloke.wordpress.com/2015/09/09/getting-and-cleaning-the-assignment/>
